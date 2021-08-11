@@ -1,0 +1,34 @@
+{
+    "builders": [{
+      "type": "azure-arm",
+  
+      "client_id": "3f329e40-f12c-4088-9f02-7c6126256d87",
+      "client_secret": "W~Uzj68b_Khx3EJ5zpLhWa_ezGa_eTrA4x",
+      "tenant_id": "a3dd3659-9003-496f-b90f-6d1c4de864c8",
+      "subscription_id": "efcdcdff-7e61-4de8-81c8-59f75517cb42",
+  
+      "managed_image_resource_group_name": "security",
+      "managed_image_name": "packerpovided",
+  
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "16.04-LTS",
+  
+      "azure_tags": {
+          "dept": "Engineering",
+          "task": "Image deployment"
+      },
+  
+      "location": "East US",
+      "vm_size": "Standard_DS2_v2"
+    }],
+    "provisioners": [
+      {
+        "type": "ansible",
+        "playbook_file": "./playbook.yml"
+      }
+    ]
+
+  }
+    
