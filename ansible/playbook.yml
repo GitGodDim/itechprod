@@ -1,0 +1,17 @@
+---
+  - name: Shell Examples
+    hosts: all
+    tasks:
+    - name: echo default
+      shell:
+         " echo $(whoami) "
+      become_user: root
+      become: true
+      register: lsout
+      tags: lsout
+    - debug: msg="{{lsout.stdout_lines}}"
+    - name: echo root
+      shell: " echo $(whoami)"
+      register: displaylist
+    - debug: msg="{{displaylist.stdout_lines}}"
+    

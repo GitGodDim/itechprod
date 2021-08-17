@@ -1,0 +1,34 @@
+{
+  "builders": [{
+    "type": "azure-arm",
+
+    "client_id": "0769daa1-cef9-422a-8b1d-d044c04aa371",
+    "client_secret": "y5Qw6_JsrwsaJekv0hwM5TGz92ur5ei4y1",
+    "tenant_id": "a3dd3659-9003-496f-b90f-6d1c4de864c8",
+    "subscription_id": "efcdcdff-7e61-4de8-81c8-59f75517cb42",
+
+    "managed_image_resource_group_name": "security",
+    "managed_image_name": "packerv3",
+    "os_type": "Linux",
+    "image_publisher": "Canonical",
+    "image_offer": "UbuntuServer",
+    "image_sku": "18.04-LTS",
+    "ssh_username": "azure",
+
+    "azure_tags": {
+        "dept": "Engineering",
+        "task": "Image deployment"
+    },
+
+    "location": "West US",
+    "vm_size": "Standard_DS2_v2"
+  }],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./playbook.yml"
+    }
+  ]
+
+}
+  
