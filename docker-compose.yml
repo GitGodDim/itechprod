@@ -17,6 +17,8 @@ services:
        - ./certbot/conf:/etc/nginx/ssl
        - ./certbot/data:/var/www/certbot
        - ./certif:/etc/nginx
+       - ./index.html:/etc/nginx/index.html
+
     ports:  
         - "80:80"
         - "443:443"
